@@ -1,0 +1,75 @@
+or
+Nov 09 21:15:23 california uvicorn[27261]: ERROR:    Exception in ASGI application
+Nov 09 21:15:23 california uvicorn[27261]: Traceback (most recent call last):
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/uvicorn/protocols/http/httptools_impl.py", line 399, in run_asgi
+Nov 09 21:15:23 california uvicorn[27261]:     result = await app(  # type: ignore[func-returns-value]
+Nov 09 21:15:23 california uvicorn[27261]:              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 09 21:15:23 california uvicorn[27261]:         self.scope, self.receive, self.send
+Nov 09 21:15:23 california uvicorn[27261]:         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 09 21:15:23 california uvicorn[27261]:     )
+Nov 09 21:15:23 california uvicorn[27261]:     ^
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+Nov 09 21:15:23 california uvicorn[27261]:     return await self.app(scope, receive, send)
+Nov 09 21:15:23 california uvicorn[27261]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/fastapi/applications.py", line 1054, in __call__
+Nov 09 21:15:23 california uvicorn[27261]:     await super().__call__(scope, receive, send)
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/starlette/applications.py", line 113, in __call__
+Nov 09 21:15:23 california uvicorn[27261]:     await self.middleware_stack(scope, receive, send)
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 187, in __call__
+Nov 09 21:15:23 california uvicorn[27261]:     raise exc
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/starlette/middleware/errors.py", line 165, in __call__
+Nov 09 21:15:23 california uvicorn[27261]:     await self.app(scope, receive, _send)
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/starlette/middleware/cors.py", line 85, in __call__
+Nov 09 21:15:23 california uvicorn[27261]:     await self.app(scope, receive, send)
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/starlette/middleware/exceptions.py", line 62, in __call__
+Nov 09 21:15:23 california uvicorn[27261]:     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+Nov 09 21:15:23 california uvicorn[27261]:     raise exc
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+Nov 09 21:15:23 california uvicorn[27261]:     await app(scope, receive, sender)
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/starlette/routing.py", line 715, in __call__
+Nov 09 21:15:23 california uvicorn[27261]:     await self.middleware_stack(scope, receive, send)
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/starlette/routing.py", line 735, in app
+Nov 09 21:15:23 california uvicorn[27261]:     await route.handle(scope, receive, send)
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/starlette/routing.py", line 288, in handle
+Nov 09 21:15:23 california uvicorn[27261]:     await self.app(scope, receive, send)
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/starlette/routing.py", line 76, in app
+Nov 09 21:15:23 california uvicorn[27261]:     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 62, in wrapped_app
+Nov 09 21:15:23 california uvicorn[27261]:     raise exc
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/starlette/_exception_handler.py", line 51, in wrapped_app
+Nov 09 21:15:23 california uvicorn[27261]:     await app(scope, receive, sender)
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/starlette/routing.py", line 73, in app
+Nov 09 21:15:23 california uvicorn[27261]:     response = await f(request)
+Nov 09 21:15:23 california uvicorn[27261]:                ^^^^^^^^^^^^^^^^
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 301, in app
+Nov 09 21:15:23 california uvicorn[27261]:     raw_response = await run_endpoint_function(
+Nov 09 21:15:23 california uvicorn[27261]:                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 09 21:15:23 california uvicorn[27261]:     ...<3 lines>...
+Nov 09 21:15:23 california uvicorn[27261]:     )
+Nov 09 21:15:23 california uvicorn[27261]:     ^
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/fastapi/routing.py", line 214, in run_endpoint_function
+Nov 09 21:15:23 california uvicorn[27261]:     return await run_in_threadpool(dependant.call, **values)
+Nov 09 21:15:23 california uvicorn[27261]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/starlette/concurrency.py", line 39, in run_in_threadpool
+Nov 09 21:15:23 california uvicorn[27261]:     return await anyio.to_thread.run_sync(func, *args)
+Nov 09 21:15:23 california uvicorn[27261]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/anyio/to_thread.py", line 56, in run_sync
+Nov 09 21:15:23 california uvicorn[27261]:     return await get_async_backend().run_sync_in_worker_thread(
+Nov 09 21:15:23 california uvicorn[27261]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 09 21:15:23 california uvicorn[27261]:         func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+Nov 09 21:15:23 california uvicorn[27261]:         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 09 21:15:23 california uvicorn[27261]:     )
+Nov 09 21:15:23 california uvicorn[27261]:     ^
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 2485, in run_sync_in_worker_thread
+Nov 09 21:15:23 california uvicorn[27261]:     return await future
+Nov 09 21:15:23 california uvicorn[27261]:            ^^^^^^^^^^^^
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/.venv/lib/python3.13/site-packages/anyio/_backends/_asyncio.py", line 976, in run
+Nov 09 21:15:23 california uvicorn[27261]:     result = context.run(func, *args)
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/app/routers/files.py", line 65, in list_directory
+Nov 09 21:15:23 california uvicorn[27261]:     path=_normalize_subpath(Path(path) / entry.name),
+Nov 09 21:15:23 california uvicorn[27261]:          ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+Nov 09 21:15:23 california uvicorn[27261]:   File "/home/cali/ftp_server/app/routers/files.py", line 21, in _normalize_subpath
+Nov 09 21:15:23 california uvicorn[27261]:     normalized = Path("/" + path).as_posix()
+Nov 09 21:15:23 california uvicorn[27261]:                       ~~~~^~~~~~
+Nov 09 21:15:23 california uvicorn[27261]: TypeError: can only concatenate str (not "PosixPath") to str
